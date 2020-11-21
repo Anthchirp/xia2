@@ -4,12 +4,13 @@
 import json
 import sys
 
-import iotbx.phil
+import freephil
 from cctbx.miller.display import render_2d, scene
 from dials.util import Sorry
 from iotbx.gui_tools.reflections import get_array_description
 from iotbx.reflection_file_reader import any_reflection_file
 from scitbx.array_family import flex
+import dials.util.freephil_plugins
 
 
 class MultiplicityViewPng(render_2d):
@@ -297,7 +298,7 @@ class MultiplicityViewJson(render_2d):
         return d
 
 
-master_phil = iotbx.phil.parse(
+master_phil = freephil.parse(
     """
 include scope cctbx.miller.display.master_phil
 unit_cell = None
@@ -324,7 +325,7 @@ font_size = 20
 
 
 def run(args):
-    pcl = iotbx.phil.process_command_line_with_files(
+    pcl = dials.util.freephil_plugins.process_command_line_with_files(
         args=args,
         master_phil=master_phil,
         reflection_file_def="data",

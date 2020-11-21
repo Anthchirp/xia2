@@ -5,7 +5,7 @@ import os
 import sys
 
 import iotbx.merging_statistics
-import iotbx.phil
+import freephil
 import libtbx
 from libtbx.introspection import number_of_processors
 from cctbx import uctbx
@@ -15,7 +15,7 @@ from dials.util.options import OptionParser
 help_message = """
 """
 
-phil_scope = iotbx.phil.parse(
+phil_scope = freephil.parse(
     """
 nproc = Auto
   .type = int(value_min=1)

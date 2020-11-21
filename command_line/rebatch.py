@@ -27,10 +27,10 @@ dataset_name = None
 
 
 def run(args):
-    import iotbx.phil
+    import freephil
     from xia2.Modules.Scaler.rebatch import rebatch
 
-    processed = iotbx.phil.process_command_line(args, master_phil)
+    processed = freephil.process_command_line(args, master_phil)
     params = processed.work.extract()
     args = processed.remaining_args
     if params.hklin is None and len(args):

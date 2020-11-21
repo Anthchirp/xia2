@@ -5,7 +5,7 @@ import sys
 
 from cctbx import crystal
 from iotbx.reflection_file_reader import any_reflection_file
-import libtbx.phil
+import freephil
 
 from dials.util import tabulate
 from dials.util.filter_reflections import filtered_arrays_from_experiments_reflections
@@ -26,7 +26,7 @@ matplotlib.use("Agg")
 
 logger = logging.getLogger("xia2.delta_cc_half")
 
-phil_scope = libtbx.phil.parse(
+phil_scope = freephil.parse(
     """
 include scope xia2.Modules.DeltaCcHalf.phil_scope
 group_size = None

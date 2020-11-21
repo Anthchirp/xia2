@@ -1,13 +1,13 @@
 import logging
 import math
 
-import iotbx.phil
+import freephil
 from cctbx.array_family import flex
 from libtbx.utils import frange
 
 logger = logging.getLogger(__name__)
 
-phil_scope = iotbx.phil.parse(
+phil_scope = freephil.parse(
     """\
 cc_one_half_method = half_dataset *sigma_tau
   .type = choice

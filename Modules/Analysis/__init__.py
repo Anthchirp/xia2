@@ -1,6 +1,6 @@
 from collections import OrderedDict
 
-from libtbx import phil
+import freephil as phil
 from dials.pychef import dose_phil_str
 
 batch_phil_scope = """\

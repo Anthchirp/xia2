@@ -3,14 +3,14 @@ import os
 import sys
 from collections import OrderedDict
 
-import iotbx.phil
+import freephil
 import xia2.Handlers.Streams
 from dials.util.options import OptionParser
 from jinja2 import ChoiceLoader, Environment, PackageLoader
 from xia2.Modules.Report import Report
 from xia2.XIA2Version import Version
 
-phil_scope = iotbx.phil.parse(
+phil_scope = freephil.parse(
     """\
 title = 'xia2 report'
   .type = str

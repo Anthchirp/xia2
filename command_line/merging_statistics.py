@@ -1,7 +1,7 @@
 import os
 import sys
 
-import iotbx.phil
+import freephil
 from cctbx import sgtbx
 from iotbx.command_line import merging_statistics
 
@@ -13,12 +13,12 @@ latex = False
   .type = bool
 """
 
-master_params = iotbx.phil.parse(master_phil, process_includes=True)
+master_params = freephil.parse(master_phil, process_includes=True)
 
 
 # override default parameters
 master_params = master_params.fetch(
-    source=iotbx.phil.parse(
+    source=freephil.parse(
         """\
 use_internal_variance = False
 eliminate_sys_absent = False

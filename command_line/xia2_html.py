@@ -10,7 +10,7 @@ import sys
 import traceback
 from collections import OrderedDict
 
-from libtbx import phil
+import freephil as phil
 import xia2
 from xia2.Modules.Report import Report
 from xia2.Handlers.Citations import Citations

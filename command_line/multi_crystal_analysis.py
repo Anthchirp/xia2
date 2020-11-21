@@ -1,7 +1,7 @@
 import logging
 import random
 
-import iotbx.phil
+import freephil
 import matplotlib
 from dials.array_family import flex
 from dials.util import log
@@ -18,7 +18,7 @@ logger = logging.getLogger("xia2.multi_crystal_analysis")
 help_message = """
 """
 
-phil_scope = iotbx.phil.parse(
+phil_scope = freephil.parse(
     """
 include scope xia2.command_line.report.phil_scope
 
@@ -42,7 +42,7 @@ output {
     process_includes=True,
 )
 
-phil_overrides = iotbx.phil.parse(
+phil_overrides = freephil.parse(
     """
 prefix = xia2-multi-crystal-report
 title = 'xia2 multi-crystal report'

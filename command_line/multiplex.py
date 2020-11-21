@@ -2,7 +2,7 @@ import logging
 import random
 import sys
 
-import iotbx.phil
+import freephil
 
 import xia2.Handlers.Streams
 from dials.array_family import flex
@@ -61,7 +61,7 @@ Filter potential outlier data sets using the ΔCC½ method::
 
 """
 
-phil_scope = iotbx.phil.parse(
+phil_scope = freephil.parse(
     """
 include scope xia2.Modules.MultiCrystal.ScaleAndMerge.phil_scope
 

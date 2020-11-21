@@ -5,7 +5,7 @@ import os
 from collections import OrderedDict
 
 import dials.pychef
-import libtbx.phil
+import freephil
 import xia2.Handlers.Environment
 import xia2.Handlers.Files
 from cctbx.array_family import flex
@@ -97,7 +97,7 @@ class Report:
 
         if self.batches is not None and len(self.params.batch) == 0:
             separate = separate_unmerged(self.intensities, self.batches)
-            scope = libtbx.phil.parse(batch_phil_scope)
+            scope = freephil.parse(batch_phil_scope)
             for i, batches in separate.batches.items():
                 batch_params = scope.extract().batch[0]
                 batch_params.id = i
@@ -334,8 +334,8 @@ class Report:
         )
 
         params.batch = []
-        scope = libtbx.phil.parse(batch_phil_scope)
-        dose_phil = libtbx.phil.parse(dose_phil_str).extract()
+        scope = freephil.parse(batch_phil_scope)
+        dose_phil = freephil.parse(dose_phil_str).extract()
         for expt in data_manager.experiments:
             batch_params = scope.extract().batch[0]
             batch_params.id = data_manager.identifiers_to_ids_map[expt.identifier]

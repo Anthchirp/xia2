@@ -5,7 +5,7 @@ import os
 from collections import OrderedDict
 
 from libtbx import Auto
-import iotbx.phil
+import freephil
 from cctbx import miller
 from cctbx import sgtbx
 from cctbx import uctbx
@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 
 
 # The phil scope
-phil_scope = iotbx.phil.parse(
+phil_scope = freephil.parse(
     """
 unit_cell_clustering {
   threshold = 5000
@@ -186,7 +186,7 @@ remove_profile_fitting_failures = True
 
 # override default parameters
 phil_scope = phil_scope.fetch(
-    source=iotbx.phil.parse(
+    source=freephil.parse(
         """\
 resolution {
   cc_half_method = sigma_tau

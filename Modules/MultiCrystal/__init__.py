@@ -3,7 +3,7 @@ import json
 import logging
 from collections import OrderedDict
 
-import iotbx.phil
+import freephil
 from scipy.cluster import hierarchy
 from scitbx.array_family import flex
 
@@ -22,7 +22,7 @@ batch
 }
 """
 
-master_phil_scope = iotbx.phil.parse(
+master_phil_scope = freephil.parse(
     """\
 unit_cell = None
   .type = unit_cell

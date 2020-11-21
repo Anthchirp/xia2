@@ -170,7 +170,7 @@ class _CommandLine:
         # first of all try to interpret arguments as phil parameters/files
 
         from xia2.Handlers.Phil import master_phil
-        from libtbx.phil import command_line
+        from freephil import command_line
 
         cmd_line = command_line.argument_interpreter(master_phil=master_phil)
         working_phil, self._argv = cmd_line.process_and_fetch(

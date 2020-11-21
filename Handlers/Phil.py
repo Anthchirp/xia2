@@ -10,8 +10,8 @@
 # couple for XDS.
 
 
-from iotbx.phil import parse
-from libtbx.phil import interface
+from freephil import parse
+from freephil import interface
 
 master_phil = parse(
     """

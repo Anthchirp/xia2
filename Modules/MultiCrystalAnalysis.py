@@ -13,7 +13,7 @@ from xia2.Modules.Analysis import batch_phil_scope
 from xia2.Modules.DeltaCcHalf import DeltaCcHalf
 from xia2.XIA2Version import Version
 
-from libtbx import phil
+import freephil as phil
 
 
 logger = logging.getLogger(__name__)
